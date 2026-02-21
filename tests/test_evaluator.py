@@ -1,6 +1,7 @@
 from source_term_precision import GroundingEvaluator
 
 # Initialize the evaluator (Loads Sudachi dictionary)
+# 評価器の初期化（Sudachi辞書がロードされます）
 evaluator = GroundingEvaluator()
 
 source_text = """
@@ -21,7 +22,8 @@ llm_output = """
 result = evaluator.evaluate(
     llm_output=llm_output,
     source_text=source_text,
-    exact_excludes={"アイデア"} # 除外語指定（完全一致）
+    exact_excludes={"アイデア"}, # 除外語指定（完全一致）
+    partial_excludes={"文書"} # 除外語指定（部分一致※）
 )
 
 print(f"Score (P_src): {result.score:.2f}")
