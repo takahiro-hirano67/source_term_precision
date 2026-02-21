@@ -1,18 +1,3 @@
-# Source Term Precision
-
-A Python package to evaluate LLM hallucination and grounding based on Source-based Term Precision ($P_{src}$).
-
-This metric calculates the ratio of compound terms in the LLM-generated text that are explicitly present in the provided source text. It treats the input source text as the Single Source of Truth (SSoT) to act as a primary filter against plausible but fabricated terminology (hallucinations), especially in strict domains like patent analysis.
-
-## Installation
-
-```bash
-pip install source_term_precision
-```
-
-## Quick Start
-
-```python
 from source_term_precision import GroundingEvaluator
 
 # Initialize the evaluator (Loads Sudachi dictionary)
@@ -42,7 +27,3 @@ result = evaluator.evaluate(
 print(f"Score (P_src): {result.score:.2f}")
 print(f"Found Words: {result.found_words}")
 print(f"Missing Words (Potential Hallucinations): {result.missing_words}")
-# Score (P_src): 0.36
-# Found Words: ['半導体記憶装置', '熱処理', 'こと', 'メモリセル']
-# Missing Words (Potential Hallucinations): ['文書', '製造プロセス', '説明', 'シリコン ウェハー', '速度', '10%向上', '除外語テスト']
-```
