@@ -8,6 +8,8 @@ This metric calculates the ratio of compound terms in the LLM-generated text tha
 
 本パッケージは、LLM（大規模言語モデル）が生成した日本語テキストのハルシネーションを評価・検知するための評価指標「原典適合率（ $P_{src}$ ）」を算出するPythonライブラリです。入力原文を唯一の情報源（SSoT）とみなし、原文に存在しない用語の出現をペナルティ化することで、専門家のファクトチェック前の一次フィルタとして機能します。
 
+<img width="1218" height="689" alt="image" src="https://github.com/user-attachments/assets/304a06a1-71ad-4488-a046-0f01e9688ed0" />
+
 ## Installation
 
 ```bash
@@ -58,3 +60,7 @@ print(f"Missing Words (Potential Hallucinations): {result.missing_words}")
 ```
 
 > **Note:** `partial_excludes`（部分一致での除外）は、意図しない複合語まで除外してしまう可能性があるため、タスクの出力形式に合わせて慎重に指定してください。
+
+## 処理のイメージ
+
+<img width="1079" height="340" alt="image" src="https://github.com/user-attachments/assets/a79512f3-0f54-4208-9724-c0e40d5dc50f" />
