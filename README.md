@@ -1,5 +1,7 @@
 # Source Term Precision
 
+[PyPI](https://pypi.org/project/source-term-precision/)
+
 A Python package to evaluate LLM hallucination and grounding for Japanese text, based on Source-based Term Precision ($P_{src}$).
 
 This metric calculates the ratio of compound terms in the LLM-generated text that are explicitly present in the provided source text. It treats the input source text as the Single Source of Truth (SSoT) to act as a primary filter against plausible but fabricated terminology (hallucinations), especially in strict domains like patent analysis.
@@ -14,7 +16,6 @@ This metric calculates the ratio of compound terms in the LLM-generated text tha
 
 ```bash
 pip install source_term_precision
-
 ```
 
 ## Quick Start
